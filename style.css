@@ -1,0 +1,138 @@
+*, :root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--slate-200);
+  font-family: 'Inter', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webikit-font-smoothing: antialiased;
+  -moz-osx-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-400: #94a3b8;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+  --lime-400: #A3E635;
+}
+
+strong, span {
+  color: var(--slate-900);
+}
+
+body {
+  background-color: var(--slate-900);
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  padding: 20px;
+}
+
+header {
+  margin-top: 4rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--slate-700);
+}
+
+header h1 {
+  margin-top: 1.5rem;
+  font-size: 1.875rem;
+  color: var(--slate-100);
+}
+
+#quiz {
+  counter-reset: quiz-item;
+}
+
+.quiz-item {
+  margin-top: 1.5rem;
+  border: 1px solid #475569;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.quiz-item h3 {
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #1e293b;
+}
+
+.quiz-item h3::before {
+  counter-increment: quiz-item;
+  content: counter(quiz-item);
+
+  background-color: #475569;
+  width: 28px;
+  height: 28px;
+  font-size: 12px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.quiz-item dl {
+  padding: 1.25rem 1.5rem;
+  display: grid;
+  gap: 8px;
+}
+
+.quiz-item dl dt {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0;
+  
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quiz-item dt span {
+  color: var(--slate-200);
+}
+
+input {
+  all: unset;
+  
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--slate-400);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+input:checked {
+  border: 1px solid var(--lime-400);
+}
+
+input:checked::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  
+  background-color: var(--lime-400);
+  border-radius: 50%;
+}
+
+#acertos {
+  text-align: center;
+  background-color: var(--lime-400);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  width: 100vw;
+  padding: 12px;
+}
